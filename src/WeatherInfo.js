@@ -1,5 +1,6 @@
 import React from 'react';
 import DisplayDate from './DisplayDate';
+import TemperatureController from './TemperatureController';
 
 export default function WeatherInfo(props) {
 	return (
@@ -12,10 +13,15 @@ export default function WeatherInfo(props) {
 				<li className='text-capitalize'>{props.data.description}</li>
 			</ul>
 
-			<div className='row'>
+			<div className='row mt-3'>
 				<div className='col-6'>
-					<img src={props.data.iconUrl} alt='description' />
-					{props.data.temperature}ºC
+					<div className='d-flex'>
+						<img src={props.data.iconUrl} alt='description' />
+
+						<TemperatureController
+							celsius={props.data.temperature}
+						/>
+					</div>
 				</div>
 				<div className='col-6'>
 					<ul>

@@ -25,6 +25,34 @@
     list-style: none;
 }
 
+.Weather .temperature {
+    font-weight: bold;
+    color: rgb(33, 33, 33);
+    font-size: 64px;
+    line-height: 64px;
+    margin: 5px 10px;
+    font-weight: 400;
+}
+
+.Weather canvas {
+    margin: 10px auto;
+}
+
+.Weather .unit {
+    color: rgb(33, 33, 33);
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    line-height: 1;
+    top: -34px;
+}
+
+.TemperatureController {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .formController {
     display: block;
     width: 100%;
