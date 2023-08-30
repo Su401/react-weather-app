@@ -23,7 +23,7 @@ export default function Weather(props) {
 			description: res.data.weather[0].description,
 			humidity: res.data.main.humidity,
 			wind: res.data.wind.speed,
-			iconUrl: 'https://ssl.gstatic.com/onebox/weather/64/sunny.png',
+			iconUrl: ` https://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`,
 			city: res.data.name,
 		});
 	};
