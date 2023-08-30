@@ -9,8 +9,8 @@ export default function Weather(props) {
 	const [weather, setWeather] = useState({ ready: false });
 
 	useEffect(() => {
-		const apikey = '6bf9818d9ac6ad65c210c2c0a7205a25';
-		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apikey}&units=metric`;
+		const apikey = '5d4be4co359dcfb3b02ea04bt4fdc01e';
+		let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apikey}`;
 		axios.get(apiUrl).then(handleResponse);
 	}, [props.defaultCity]);
 
@@ -18,19 +18,19 @@ export default function Weather(props) {
 		console.log(res.data);
 		setWeather({
 			ready: true,
-			temperature: Math.round(res.data.main.temp),
-			date: new Date(res.data.dt * 1000),
-			description: res.data.weather[0].description,
-			humidity: res.data.main.humidity,
+			temperature: Math.round(res.data.temperature.current),
+			date: new Date(res.data.time * 1000),
+			description: res.data.condition.description,
+			humidity: res.data.temperature.humidity,
 			wind: res.data.wind.speed,
-			iconUrl: ` https://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`,
-			city: res.data.name,
+			iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${res.data.condition.icon}.png`,
+			city: res.data.city,
 		});
 	};
 
 	const handleSubmit = function (city) {
-		const apikey = '6bf9818d9ac6ad65c210c2c0a7205a25';
-		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+		const apikey = '5d4be4co359dcfb3b02ea04bt4fdc01e';
+		let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}`;
 		axios.get(apiUrl).then(handleResponse);
 	};
 
