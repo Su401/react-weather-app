@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import WeatherInfo from './WeatherInfo';
-import FormController from './FormController';
-import './Weather.css';
+import WeatherInfo from './controllers/WeatherInfo';
+import FormController from './controllers//FormController';
+import './css/Weather.css';
 
 export default function Weather(props) {
 	const [weather, setWeather] = useState({ ready: false });
