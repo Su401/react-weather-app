@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import WeatherInfo from './controllers/WeatherInfo';
 import FormController from './controllers//FormController';
+import WeatherInfo from './controllers/WeatherInfo';
+import WeatherForecast from './controllers/WeatherForecast';
 import './css/Weather.css';
 
 export default function Weather(props) {
@@ -39,6 +40,7 @@ export default function Weather(props) {
 			<div className='Weather'>
 				<FormController onFormSubmit={handleSubmit} />
 				<WeatherInfo data={weather} />
+				<WeatherForecast data={weather} />
 			</div>
 		);
 	} else {

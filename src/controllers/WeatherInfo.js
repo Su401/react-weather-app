@@ -1,5 +1,5 @@
 import React from 'react';
-import DisplayDate from './DisplayDate';
+import DisplayDate from './DateController';
 import TemperatureController from './TemperatureController';
 
 export default function WeatherInfo(props) {
