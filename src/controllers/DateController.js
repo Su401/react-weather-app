@@ -24,7 +24,7 @@ export default function DisplayDate(props) {
 
 	return (
 		<div className='DisplayDate'>
-			{day} {hours}h{minutes}
+			{day} {hours}:{minutes}
 		</div>
 	);
 }
